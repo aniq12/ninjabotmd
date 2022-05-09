@@ -28,13 +28,6 @@ cmd.on(
 		text, cmd
 	}) => {
 	//-- ATRIBUT
-	const anu = await client.rand(set.banner)
-	const buf = await client.getBuffer(anu)
-	const xurl = `https://telegra.ph/file/0ca2fdeabe1ce8de08103.jpg`
-	const wm1 = `Made by Amirul Dev`
-	const wm2 = `Made by @687824239`
-	const web = 'https://amiruldev.my.id'
-	const tweb = 'MY WEBSITE'
 	const parse = cmd.includes('=>') ? text.replace('=>', 'return ').replace('md', 'client.socket').replace('legacy', 'client.socket').replace('zz', '.toString()') : text.replace('>', '').replace('md', 'client.socket').replace('legacy', 'client.socket')
 	try {
 		const evaluate = await eval(`;(async () => {${parse} })()`).catch((e: unknown) => {

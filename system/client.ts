@@ -412,7 +412,7 @@ export default class Client {
           body: `Klik disini untuk wa owner`,
           previewType: 'PHOTO',
           thumbnail: ban,
-          sourceUrl: set.gc[0],
+          sourceUrl: 'https://wa.me/' + set.numown,
         }
       }
     })

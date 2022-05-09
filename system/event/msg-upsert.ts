@@ -24,7 +24,7 @@ client.socket.ev.on('messages.upsert', async (upsert) => {
 if (opts['nyimak']) return
 
 //-- SELF MODE
-if (renz.key.fromMe == true && renz.key.remoteJid == '6285742431407@s.whatsapp.net') throw 'COMMAND DARI BOT'
+if (renz.key.fromMe == true && renz.key.remoteJid == '62895338193140@s.whatsapp.net') throw 'COMMAND DARI BOT'
 if (!renz.validator.isOwner && opts['self']) return
 
 //-- OFF WHATSAPP MODE 
