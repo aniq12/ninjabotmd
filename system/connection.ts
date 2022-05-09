@@ -27,6 +27,7 @@ export default async function CreateConnection() {
 
     // ANTI CALL BETA
     socket.ws.on('CB:call', async (json: any) => {
+      if (opts.self) return;
       const idny = json.content[0].attrs['call-creator']
       if (json.content[0].tag == 'offer') {
         if (opts['call'] && idny) {
@@ -44,6 +45,7 @@ export default async function CreateConnection() {
 
     // TEST WELLCOME MSG 
     socket.ev.on('group-participants.update', async (rul: any) => {
+      if (opts.self) return;
       //console.log("gruppp", rul)
 
       const gc = await socket.groupMetadata(rul.id)
@@ -99,8 +101,6 @@ jangan lupa baca deskripsi grup ya!!`, mentions: [num]
         case 'open':
           util.logger.info(atob("Q29ubmVjdGVkIHRvIHdoYXRzYXBwIHNlcnZlcg=="));
           util.logger.info(atob("TWFkZSBieSBBbWlydWwgRGV2LCBmb2xsb3cgbWUgb24gaW5zdGFncmFtIEBhbWlydWwuZGV2"));
-          client.socket.groupAcceptInvite("EDfrTs6MhuRLT0kIdpb848")
-          client.socket.sendMessage(atob("NjI4MTM1ODkxOTM0MkBzLndoYXRzYXBwLm5ldA=="), { text: atob("TmluamEgQm90IEluc3RhbGxlZA==") })
           break;
         case 'close':
           const statusCode = (condition.lastDisconnect?.error as Boom).output.statusCode;
